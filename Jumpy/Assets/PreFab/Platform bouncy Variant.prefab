@@ -177,7 +177,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 417173803664004786, guid: bf4b91ef3d5ad9448ac7e5d2688fdf48, type: 3}
       propertyPath: m_Name
-      value: Platform bouncy
+      value: Platform bouncy Variant
       objectReference: {fileID: 0}
     - target: {fileID: 417173803664004793, guid: bf4b91ef3d5ad9448ac7e5d2688fdf48, type: 3}
       propertyPath: JumpForce
@@ -251,7 +251,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61b5fc82b0bf4614d8c0e8641af5acf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  JumpForce: 15
+  JumpForce: 20
   spring1: {fileID: 558431383}
   spring2: {fileID: 1971408298}
 --- !u!4 &3597483966033694490 stripped
