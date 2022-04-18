@@ -20,7 +20,7 @@ public class DestoryPlatform : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Platform = (GameObject)Instantiate(platformPrefab, new Vector2 (Random.Range(-3f,3f), player.transform.position.y + (14 + Random.Range(.5f,2f))),Quaternion.identity);
-        Destroy(platformPrefab);
+        Platform = (GameObject)Instantiate(platformPrefab, new Vector2 (Random.Range(-3f,3f), player.transform.position.y + (4 + Random.Range(.3f,2f))),Quaternion.identity);
+        Destroy(collision.gameObject);
     }
 }
