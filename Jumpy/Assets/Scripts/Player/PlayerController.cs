@@ -12,15 +12,10 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
     }
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+   
     void Update()
     {
-        movementSpeed = Input.GetAxis("Horizontal") * movementSpeed;
+       xMovement = Input.GetAxis("Horizontal") * movementSpeed;
     }
 
     private void FixedUpdate()
