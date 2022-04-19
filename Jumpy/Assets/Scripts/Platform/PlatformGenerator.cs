@@ -38,8 +38,8 @@ public class PlatformGenerator : MonoBehaviour
             float Dist_X = Random.Range(Top_Left.x + Offset, -Top_Left.x - Offset);
             float Dist_Y = Random.Range(1f, 3f);
 
-            // Create brown platform random with 1/8 probability
-            int Rand_BrownPlatform = Random.Range(1, 8);
+            
+            int Rand_BrownPlatform = Random.Range(1, 20);
 
             if (Rand_BrownPlatform == 1)
             {
@@ -55,11 +55,11 @@ public class PlatformGenerator : MonoBehaviour
             Vector3 Platform_Pos = new Vector3(Dist_X, Current_Y, 0);
             int Rand_Platform = Random.Range(1, 10);
 
-            if (Rand_Platform == 1) // Create blue platform
+            if (Rand_Platform == 1) 
                 Platform = Instantiate(BoosterPlatform, Platform_Pos, Quaternion.identity);
-            else if (Rand_Platform == 2) // Create white platform
+            else if (Rand_Platform == 2) 
                 Platform = Instantiate(DyingPlatform, Platform_Pos, Quaternion.identity);
-            else // Create green platform
+            else 
                 Platform = Instantiate(NormalPlatform, Platform_Pos, Quaternion.identity);
 
             if (Rand_Platform != 2)
@@ -75,7 +75,7 @@ public class PlatformGenerator : MonoBehaviour
                     
                     Random_Object.transform.parent = Platform.transform;
                 }
-                else if (Rand_Object == 7) // Create trampoline
+                else if (Rand_Object == 7) 
                 {
                     Vector3 Trampoline_Pos = new Vector3(Platform_Pos.x + 0.13f, Platform_Pos.y + 0.25f, 0);
                     Random_Object = Instantiate(Rocket, Trampoline_Pos, Quaternion.identity);

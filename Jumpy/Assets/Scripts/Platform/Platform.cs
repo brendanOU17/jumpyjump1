@@ -41,14 +41,14 @@ public class Platform : MonoBehaviour
                     transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
                 }
 
-           
-                    
+                Destroy(gameObject);
+
             }
            
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.relativeVelocity.y <= 0f)
         {
