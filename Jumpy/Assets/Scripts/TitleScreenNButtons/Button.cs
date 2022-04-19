@@ -12,7 +12,7 @@ public class Button : MonoBehaviour
     }
 
 
-    public void StartGame()
+    public void startGame()
     {
        SceneManager.LoadScene("main");
     }
