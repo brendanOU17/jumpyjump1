@@ -25,9 +25,9 @@ public class GameManager : MonoBehaviour
         Top_Left = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 0));
     }
 
-    void FixedUpdate()
+   void FixedUpdate () 
     {
-        if (!Game_Over)
+        if(!Game_Over)
         {
             // Calculate max height
             if (Player.transform.position.y > Max_Height)
@@ -38,10 +38,13 @@ public class GameManager : MonoBehaviour
             // Check player fall
             if (Player.transform.position.y - Camera.main.transform.position.y < Get_DestroyDistance())
             {
-                Game_Over = true;
+                // Play game over sound
+                GetComponent<AudioSource>().Play();
+                
+
             }
         }
-    }
+	}
 
     void OnGUI()
     {
