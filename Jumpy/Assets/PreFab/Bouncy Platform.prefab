@@ -177,7 +177,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 417173803664004786, guid: bf4b91ef3d5ad9448ac7e5d2688fdf48, type: 3}
       propertyPath: m_Name
-      value: Platform bouncy Variant
+      value: Bouncy Platform
       objectReference: {fileID: 0}
     - target: {fileID: 417173803664004793, guid: bf4b91ef3d5ad9448ac7e5d2688fdf48, type: 3}
       propertyPath: JumpForce
