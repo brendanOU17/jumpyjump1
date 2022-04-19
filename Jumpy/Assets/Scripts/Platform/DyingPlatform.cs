@@ -16,7 +16,6 @@ public class DyingPlatform : MonoBehaviour
         if (collide.gameObject.CompareTag("Player"))
         {
             Deactive();
-            
         }
     }
 }

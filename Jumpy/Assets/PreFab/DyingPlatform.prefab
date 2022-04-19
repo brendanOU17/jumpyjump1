@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 195804244759126736}
   - component: {fileID: 195804244759126739}
   - component: {fileID: 195804244759126738}
-  - component: {fileID: -2640430641759178022}
+  - component: {fileID: -7886438353717417997}
+  - component: {fileID: 1093639752351129697}
   m_Layer: 0
   m_Name: DyingPlatform
   m_TagString: Untagged
@@ -129,7 +130,7 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
---- !u!114 &-2640430641759178022
+--- !u!114 &-7886438353717417997
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -141,6 +142,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 150f8290234b7e145a86f5cfcebcfb6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1093639752351129697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 195804244759126749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4caa543acb83494791a774696f23949, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  JumpForce: 5
 --- !u!1 &8937570764587512044
 GameObject:
   m_ObjectHideFlags: 0
