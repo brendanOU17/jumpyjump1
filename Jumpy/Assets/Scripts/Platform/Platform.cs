@@ -41,12 +41,11 @@ public class Platform : MonoBehaviour
                     transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
                 }
 
-                if (!GetComponent<AudioSource>().isPlaying && !transform.GetChild(0).GetComponent<AudioSource>().isPlaying)
+           
                     Destroy(gameObject);
             }
             else
             {
-                if (!GetComponent<AudioSource>().isPlaying)
                     Destroy(gameObject);
             }
         }

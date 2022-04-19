@@ -5,9 +5,9 @@ using UnityEngine;
 public class PlatformGenerator : MonoBehaviour
 {
 
-    public GameObject Platform_Green;
-    public GameObject Platform_Blue;
-    public GameObject Platform_White;
+    public GameObject NormalPlatform;
+    public GameObject BoosterPlatform;
+    public GameObject DyingPlatform;
     public GameObject Platform_Brown;
 
     public GameObject Spring;
@@ -56,15 +56,15 @@ public class PlatformGenerator : MonoBehaviour
             int Rand_Platform = Random.Range(1, 10);
 
             if (Rand_Platform == 1) // Create blue platform
-                Platform = Instantiate(Platform_Blue, Platform_Pos, Quaternion.identity);
+                Platform = Instantiate(BoosterPlatform, Platform_Pos, Quaternion.identity);
             else if (Rand_Platform == 2) // Create white platform
-                Platform = Instantiate(Platform_White, Platform_Pos, Quaternion.identity);
+                Platform = Instantiate(DyingPlatform, Platform_Pos, Quaternion.identity);
             else // Create green platform
-                Platform = Instantiate(Platform_Green, Platform_Pos, Quaternion.identity);
+                Platform = Instantiate(NormalPlatform, Platform_Pos, Quaternion.identity);
 
             if (Rand_Platform != 2)
             {
-                // Create random objects; like spring, trampoline and etc...
+                
                 int Rand_Object = Random.Range(1, 40);
 
                 if (Rand_Object == 4) // Create spring
@@ -72,7 +72,7 @@ public class PlatformGenerator : MonoBehaviour
                     Vector3 Spring_Pos = new Vector3(Platform_Pos.x + 0.5f, Platform_Pos.y + 0.27f, 0);
                     Random_Object = Instantiate(Spring, Spring_Pos, Quaternion.identity);
 
-                    // Set parent to object
+                    
                     Random_Object.transform.parent = Platform.transform;
                 }
                 else if (Rand_Object == 7) // Create trampoline
@@ -80,7 +80,7 @@ public class PlatformGenerator : MonoBehaviour
                     Vector3 Trampoline_Pos = new Vector3(Platform_Pos.x + 0.13f, Platform_Pos.y + 0.25f, 0);
                     Random_Object = Instantiate(Trampoline, Trampoline_Pos, Quaternion.identity);
 
-                    // Set parent to object
+                    
                     Random_Object.transform.parent = Platform.transform;
                 }
                 else if (Rand_Object == 15) // Create propeller
@@ -88,7 +88,7 @@ public class PlatformGenerator : MonoBehaviour
                     Vector3 Propeller_Pos = new Vector3(Platform_Pos.x + 0.13f, Platform_Pos.y + 0.15f, 0);
                     Random_Object = Instantiate(Propeller, Propeller_Pos, Quaternion.identity);
 
-                    // Set parent to object
+                    
                     Random_Object.transform.parent = Platform.transform;
                 }
             }

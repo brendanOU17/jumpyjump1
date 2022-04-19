@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     private Vector3 TopLeft;
     private Vector3 CameraPos;
 
-    private bool GameOver = false;
+
 
     public Text TxtGameOverScore;
     public Text TxtGameOverHighsocre;
@@ -27,28 +27,7 @@ public class GameManager : MonoBehaviour
         TopLeft = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 0));
     }
 
-    void FixedUpdate()
-    {
-        if (!GameOver)
-        {
-            // Calculate max height
-            if (Player.transform.position.y > MaxHeight)
-            {
-                MaxHeight = Player.transform.position.y;
-            }
-
-            // Check player fall
-            if (Player.transform.position.y - Camera.main.transform.position.y < Get_DestroyDistance())
-            {
-                // Play game over sound
-                GetComponent<AudioSource>().Play();
-
-                // Set game over
-                Set_GameOver();
-                GameOver = true;
-            }
-        }
-    }
+      
 
     void OnGUI()
     {
@@ -57,10 +36,7 @@ public class GameManager : MonoBehaviour
         TxtScore.text = Score.ToString();
     }
 
-    public bool Get_GameOver()
-    {
-        return GameOver;
-    }
+   
 
     public float Get_DestroyDistance()
     {
