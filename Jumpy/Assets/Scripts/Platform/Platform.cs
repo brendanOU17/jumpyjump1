@@ -22,7 +22,7 @@ public class Platform : MonoBehaviour
     {
         if (transform.position.y - Camera.main.transform.position.y < Destroy_Distance)
         {
-            if (name != "Platform(Clone)" && name != "DyingPlatform(Clone)" && name != "Bouncy Platform(Clone)" && !Create_NewPlatform)
+            if (name != "FakePlatform(Clone)" && name != "Spring(Clone)" && name != "Rocket(Clone)" && !Create_NewPlatform)
             {
                 GameManager.GetComponent<PlatformGenerator>().GeneratePlatform(1);
                 Create_NewPlatform = true;
@@ -42,12 +42,9 @@ public class Platform : MonoBehaviour
                 }
 
            
-                    Destroy(gameObject);
+                    
             }
-            else
-            {
-                    Destroy(gameObject);
-            }
+           
         }
     }
 

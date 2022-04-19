@@ -11,20 +11,20 @@ public class PlatformGenerator : MonoBehaviour
     public GameObject Platform_Brown;
 
     public GameObject Spring;
-    public GameObject Trampoline;
-    public GameObject Propeller;
+    public GameObject Rocket;
+    //public GameObject Propeller;
 
     private GameObject Platform;
     private GameObject Random_Object;
 
     public float Current_Y = 0;
     float Offset;
-    Vector3 Top_Left;
+    Vector2 Top_Left;
 
     void Start()
     {
         // Initialize boundary
-        Top_Left = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 0));
+        Top_Left = Camera.main.ScreenToWorldPoint(new Vector2(0, 0));
         Offset = 1.2f;
 
         // Initialize platforms
@@ -36,7 +36,7 @@ public class PlatformGenerator : MonoBehaviour
         {
             // Calculate platform x, y
             float Dist_X = Random.Range(Top_Left.x + Offset, -Top_Left.x - Offset);
-            float Dist_Y = Random.Range(2f, 5f);
+            float Dist_Y = Random.Range(1f, 3f);
 
             // Create brown platform random with 1/8 probability
             int Rand_BrownPlatform = Random.Range(1, 8);
@@ -78,19 +78,19 @@ public class PlatformGenerator : MonoBehaviour
                 else if (Rand_Object == 7) // Create trampoline
                 {
                     Vector3 Trampoline_Pos = new Vector3(Platform_Pos.x + 0.13f, Platform_Pos.y + 0.25f, 0);
-                    Random_Object = Instantiate(Trampoline, Trampoline_Pos, Quaternion.identity);
+                    Random_Object = Instantiate(Rocket, Trampoline_Pos, Quaternion.identity);
 
                     
                     Random_Object.transform.parent = Platform.transform;
                 }
-                else if (Rand_Object == 15) // Create propeller
+                /*else if (Rand_Object == 15) // Create propeller
                 {
                     Vector3 Propeller_Pos = new Vector3(Platform_Pos.x + 0.13f, Platform_Pos.y + 0.15f, 0);
                     Random_Object = Instantiate(Propeller, Propeller_Pos, Quaternion.identity);
 
                     
                     Random_Object.transform.parent = Platform.transform;
-                }
+                }*/
             }
         }
     }
