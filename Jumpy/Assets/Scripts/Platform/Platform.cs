@@ -24,13 +24,10 @@ public class Platform : MonoBehaviour
         {
             if (name != "FakePlatform(Clone)" && name != "Spring(Clone)" && name != "Rocket(Clone)" && !Create_NewPlatform)
             {
-                GameManager.GetComponent<PlatformGenerator>().GeneratePlatform(1);
+                GameManager.GetComponent<PlatformGenerator>().GeneratePlatform(2);
                 Create_NewPlatform = true;
             }
 
-            GetComponent<EdgeCollider2D>().enabled = false;
-            GetComponent<PlatformEffector2D>().enabled = false;
-            GetComponent<SpriteRenderer>().enabled = false;
 
             if (transform.childCount > 0)
             {
@@ -44,7 +41,7 @@ public class Platform : MonoBehaviour
                 Destroy(gameObject);
 
             }
-           
+            Destroy(gameObject);
         }
     }
 

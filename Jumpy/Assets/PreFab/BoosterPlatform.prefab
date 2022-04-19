@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 731291890626735405}
   m_Layer: 0
   m_Name: BoosterPlatform
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4caa543acb83494791a774696f23949, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  JumpForce: 17
+  JumpForce: 20
 --- !u!114 &731291890626735405
 MonoBehaviour:
   m_ObjectHideFlags: 0

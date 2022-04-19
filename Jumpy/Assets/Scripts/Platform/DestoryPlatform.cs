@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class DestoryPlatform : MonoBehaviour
 {
-    public GameObject player;
-    public GameObject platformPrefab,springPlatform;
-    private GameObject Platform;
+
     void Start()
     {
         
@@ -20,6 +18,10 @@ public class DestoryPlatform : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Destroy(collision.gameObject);
+      
+        if (collision.gameObject.CompareTag("Platform"))
+        {
+              Destroy(collision.gameObject);
+        }
     }
 }

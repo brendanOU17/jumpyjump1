@@ -28,7 +28,7 @@ public class PlatformGenerator : MonoBehaviour
         Offset = 1.2f;
 
         // Initialize platforms
-        GeneratePlatform(10);
+        GeneratePlatform(1);
     }
     public void GeneratePlatform(int Num)
     {
@@ -36,7 +36,7 @@ public class PlatformGenerator : MonoBehaviour
         {
             // Calculate platform x, y
             float Dist_X = Random.Range(Top_Left.x + Offset, -Top_Left.x - Offset);
-            float Dist_Y = Random.Range(1f, 3f);
+            float Dist_Y = Random.Range(2f, 5f);
 
             
             int Rand_BrownPlatform = Random.Range(1, 20);
