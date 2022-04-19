@@ -19,12 +19,12 @@ public class PlatformGenerator : MonoBehaviour
 
     public float Current_Y = 0;
     float Offset;
-    Vector2 Top_Left;
+    Vector3 Top_Left;
 
     void Start()
     {
         // Initialize boundary
-        Top_Left = Camera.main.ScreenToWorldPoint(new Vector2(0, 0));
+        Top_Left = Camera.main.ScreenToWorldPoint(new Vector3(0, 0,0));
         Offset = 1.2f;
 
         // Initialize platforms
