@@ -69,7 +69,7 @@ public class PlatformGenerator : MonoBehaviour
 
                 if (Rand_Object == 4) // Create spring
                 {
-                    Vector3 Spring_Pos = new Vector3(Platform_Pos.x + 0.5f, Platform_Pos.y + 0.27f, 0);
+                    Vector3 Spring_Pos = new Vector3(Platform_Pos.x, Platform_Pos.y, 0);
                     Random_Object = Instantiate(Spring, Spring_Pos, Quaternion.identity);
 
                     

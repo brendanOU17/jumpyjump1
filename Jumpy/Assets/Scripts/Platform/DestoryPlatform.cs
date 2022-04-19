@@ -4,24 +4,14 @@ using UnityEngine;
 
 public class DestoryPlatform : MonoBehaviour
 {
-
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public GameObject Player;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
       
-        if (collision.gameObject.CompareTag("Platform"))
+        if (collision.gameObject.CompareTag("Player"))
         {
-              Destroy(collision.gameObject);
+              Destroy(Player);
         }
     }
 }
