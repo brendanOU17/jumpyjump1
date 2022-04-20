@@ -35,6 +35,7 @@ public class Button : MonoBehaviour
  public void startGame()
     {
         PrefabUtility.SaveAsPrefabAsset(playerskin, "Assets/Assets/selectedSkin.prefab");
+        PlayerPrefs.SetInt("Score", 0);
         SceneManager.LoadScene("main");
     }
 

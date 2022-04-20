@@ -6,6 +6,7 @@ public class Rocket : MonoBehaviour
 {
     public float JumpForce = 10f;
 
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
 
@@ -17,6 +18,7 @@ public class Rocket : MonoBehaviour
                 Vector2 velocity = rb.velocity;
                 velocity.y = JumpForce;
                 rb.velocity = velocity;
+                gameObject.SetActive(false);
             }
         }
     }
