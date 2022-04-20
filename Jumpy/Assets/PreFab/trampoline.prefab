@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 380633067474084571}
   - component: {fileID: 1922897198121517636}
   m_Layer: 0
-  m_Name: tampoline
+  m_Name: trampoline
   m_TagString: Rocket
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

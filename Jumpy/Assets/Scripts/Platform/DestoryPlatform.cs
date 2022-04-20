@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DestoryPlatform : MonoBehaviour
 {
@@ -11,7 +12,16 @@ public class DestoryPlatform : MonoBehaviour
       
         if (collision.gameObject.CompareTag("Player"))
         {
-              Destroy(Player);
+           SceneManager.LoadScene("Gameover");
         }
-    }
+
+
+       
+    } 
+    
+    IEnumerator Gameover()
+        {
+            yield return new WaitForSeconds(3f);
+            
+        }
 }

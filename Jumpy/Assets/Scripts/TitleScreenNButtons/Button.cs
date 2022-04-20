@@ -50,6 +50,7 @@ public class Button : MonoBehaviour
 
     public void Restart()
     {
+        PlayerPrefs.SetInt("Score", 0);
         SceneManager.LoadScene("main");
     }
 

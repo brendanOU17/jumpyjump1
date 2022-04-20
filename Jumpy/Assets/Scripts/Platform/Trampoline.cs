@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Rocket : MonoBehaviour
+public class Trampoline : MonoBehaviour
 {
     public float JumpForce = 10f;
     
