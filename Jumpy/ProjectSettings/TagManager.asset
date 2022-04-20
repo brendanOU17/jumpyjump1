@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Destroyer
   - Platform
+  - Rocket
   layers:
   - Default
   - TransparentFX

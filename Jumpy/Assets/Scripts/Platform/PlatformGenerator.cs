@@ -11,7 +11,7 @@ public class PlatformGenerator : MonoBehaviour
     public GameObject Platform_Brown;
 
     public GameObject Spring;
-    public GameObject Rocket;
+    public GameObject Trampoline;
     //public GameObject Propeller;
 
     private GameObject Platform;
@@ -78,7 +78,7 @@ public class PlatformGenerator : MonoBehaviour
                 else if (Rand_Object == 7) 
                 {
                     Vector3 Trampoline_Pos = new Vector3(Platform_Pos.x + 0.13f, Platform_Pos.y + 0.25f, 0);
-                    Random_Object = Instantiate(Rocket, Trampoline_Pos, Quaternion.identity);
+                    Random_Object = Instantiate(Trampoline, Trampoline_Pos, Quaternion.identity);
 
                     
                     Random_Object.transform.parent = Platform.transform;

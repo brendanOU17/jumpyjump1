@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
+    public GameObject rocket;
     public float movementSpeed = 10f;
     public Rigidbody2D rb;
     public float xMovement;
@@ -55,6 +56,14 @@ public class PlayerController : MonoBehaviour
         Vector2 velocity = rb.velocity;
         velocity.x = xMovement;
         rb.velocity = velocity;
+
+        Vector3 Top_Left = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 0));
+        float Offset = 0.5f;
+
+        if (transform.position.x > -Top_Left.x + Offset)
+            transform.position = new Vector3(Top_Left.x - Offset, transform.position.y, transform.position.z);
+        else if (transform.position.x < Top_Left.x - Offset)
+            transform.position = new Vector3(-Top_Left.x + Offset, transform.position.y, transform.position.z);
     }
 
     public void PlayerDie()
@@ -66,5 +75,15 @@ public class PlayerController : MonoBehaviour
         }
         
        
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag==("Rocket"))
+        {
+            rocket.SetActive(true);
+            Debug.Log("spwan rocket");
+        }
+        
     }
 }
