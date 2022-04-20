@@ -11,7 +11,9 @@ public class PlayerController : MonoBehaviour
     public float xMovement;
     public float topScore = 0.0f;
     public Text ScoreText;
+    public Text HighscoreText;
     private int Health;
+   // public float highscore = 0.0f;
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -29,12 +31,18 @@ public class PlayerController : MonoBehaviour
             this.GetComponent<SpriteRenderer>().flipX = false;
         }
 
-        if(rb.velocity.y >0 && transform.position.y > topScore)
+      if(rb.velocity.y >0 && transform.position.y > topScore)
         {
             topScore = transform.position.y;
         }
-        ScoreText.text = "Score: " + Mathf.Round(topScore).ToString();
+        PlayerPrefs.SetFloat("Score",PlayerPrefs.GetFloat("Score")+ topScore);
+        //ScoreText.text = "Score: " + Mathf.Round(topScore).ToString();
 
+        /*if(topScore > highscore)
+        {
+            highscore = topScore;
+            HighscoreText.text = "Highscore: " + Mathf.Round(highscore).ToString();
+        }*/
 
     }
 

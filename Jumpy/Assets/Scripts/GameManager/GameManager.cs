@@ -5,7 +5,6 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     private GameObject Player;
-    public Text Txt_Score;
     private Vector3 Top_Left;
     private Vector3 Camera_Pos;
 
