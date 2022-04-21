@@ -29,10 +29,12 @@ public class EnemyBullet : MonoBehaviour
     {
         if (col.gameObject.CompareTag("Player"))
         {
-            Debug.Log("hit");
+            
+            SoundManager.Playsound("playerDieNew");
             Destroy(gameObject);
             GameObject.Find("Player").GetComponent<PlayerController>().enabled = false;
             GameObject.Find("Player").GetComponent<BoxCollider2D>().enabled = false;
+            
         }
     }
 }

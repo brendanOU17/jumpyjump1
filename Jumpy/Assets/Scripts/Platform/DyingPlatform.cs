@@ -27,6 +27,7 @@ public class DyingPlatform : MonoBehaviour
                 Vector2 velocity = rb.velocity;
                 velocity.y = JumpForce;
                 rb.velocity = velocity;
+                SoundManager.Playsound("DyingPlatformSound");
                 StartCoroutine(DestoryPlatform());
             }
         }

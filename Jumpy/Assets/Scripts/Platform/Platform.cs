@@ -55,7 +55,7 @@ public class Platform : MonoBehaviour
                 Vector2 velocity = rb.velocity;
                 velocity.y = JumpForce; 
                 rb.velocity = velocity;
-
+                SoundManager.Playsound("jump");
                 PlatformType();
             }
         }
