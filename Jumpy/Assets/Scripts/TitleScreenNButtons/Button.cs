@@ -6,8 +6,8 @@ using UnityEditor;
 
 public class Button : MonoBehaviour
 {
-    public CharacterDatabase characterData;
-    public SpriteRenderer characterSprite;
+    public CharacterDatabase characterDB;
+    public SpriteRenderer artworkSprite;
     private int selectedOption = 0;
 
 
@@ -19,19 +19,19 @@ public class Button : MonoBehaviour
         }
         else
         {
-            load();
+            Load();
         }
-        UpdateCharacter(selectedOption);
+        UpdateChar(selectedOption);
     }
     public void NextOption()
     {
        selectedOption++;
-        if(selectedOption >= characterData.CharacterCount)
+        if(selectedOption >= characterDB.CharacterCount)
         {
             selectedOption = 0;
         }
-        UpdateCharacter(selectedOption);
-        save();
+        UpdateChar(selectedOption);
+        Save();
     }
 
     public void BackOption()
@@ -39,29 +39,31 @@ public class Button : MonoBehaviour
       selectedOption--;
         if(selectedOption < 0)
         {
-            selectedOption = characterData.CharacterCount - 1; 
+            selectedOption = characterDB.CharacterCount - 1; 
         }
-        UpdateCharacter(selectedOption);
-        save();
+        UpdateChar(selectedOption);
+        Save();
     }
-     private void UpdateCharacter(int selectedOption)
+     private void UpdateChar(int selectedOption)
     {
-        Character character = characterData.GetCharacter(selectedOption);
-        characterSprite.sprite = character.characterSprite;
+        Character character = characterDB.GetCharacter(selectedOption);
+        artworkSprite.sprite = character.characterSprite;
     }
-    private void load()
+    private void Load()
     {
         selectedOption = PlayerPrefs.GetInt("selectedOption");
     }
 
-    private void save()
+    private void Save()
     {
         PlayerPrefs.SetInt("selectedOption", selectedOption);
+        PlayerPrefs.Save();
     }
 
 
     public void startGame()
-    { 
+    {
+        
         PlayerPrefs.SetInt("Score", 0);
         SceneManager.LoadScene("main");
     }

@@ -433,7 +433,7 @@ GameObject:
   - component: {fileID: 269014023}
   - component: {fileID: 269014022}
   m_Layer: 0
-  m_Name: SelectedCharacter
+  m_Name: Selected Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -451,8 +451,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d00ca71fac455c04384ccf1e6c64a5b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterData: {fileID: 11400000, guid: eb5df8944556b294791b456fed85c6dd, type: 2}
-  characterSprite: {fileID: 269014023}
+  characterDB: {fileID: 11400000, guid: eb5df8944556b294791b456fed85c6dd, type: 2}
+  artworkSprite: {fileID: 269014023}
 --- !u!212 &269014023
 SpriteRenderer:
   m_ObjectHideFlags: 0
