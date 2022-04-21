@@ -13,13 +13,30 @@ public class PlayerController : MonoBehaviour
     public float highscore = 0.0f;
     private int Health;
     private int writeScore;
-    private int writeHighscore;
-   // public float highscore = 0.0f;
+    public CharacterDatabase characterData;
+    public SpriteRenderer characterSprite;
+    private int selectedOption = 0;
+
+    // public float highscore = 0.0f;
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
     }
-   
+
+    void Start()
+    {
+        if (PlayerPrefs.HasKey("selectedOption"))
+        {
+            selectedOption = 0;
+        }
+        else
+        {
+            load();
+        }
+        UpdateCharacter(selectedOption);
+    }
+
+
     void Update()
     {
         PlayerMovement();
@@ -78,5 +95,19 @@ public class PlayerController : MonoBehaviour
        
     }
 
-  
+    private void UpdateCharacter(int selectedOption)
+    {
+        Character character = characterData.GetCharacter(selectedOption);
+        characterSprite.sprite = character.characterSprite;
+    }
+    private void load()
+    {
+        selectedOption = PlayerPrefs.GetInt("selectedOption");
+    }
+
+
+
+
+
+
 }

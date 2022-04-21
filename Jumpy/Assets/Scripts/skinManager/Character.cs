@@ -1,11 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class SkinManager : MonoBehaviour
+[System.Serializable]
+public class Character 
 {
-  
-
-    
+    public Sprite characterSprite;
 }
