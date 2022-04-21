@@ -6,33 +6,35 @@ using UnityEditor;
 
 public class Button : MonoBehaviour
 {
-    public GameObject[] characters;
-    public int selectedCharacter = 0;
-    
+    public SpriteRenderer sprite;
+    public List<Sprite> skins = new List<Sprite>();
+    private int selectedSkin = 0;
+    public GameObject playerskin;
 
 
     public void NextOption()
     {
-      characters[selectedCharacter].SetActive(false);
-      selectedCharacter = (selectedCharacter + 1) % characters.Length;
-      characters[selectedCharacter].SetActive(true);
+        selectedSkin = selectedSkin + 1;
+        if (selectedSkin == skins.Count)
+        {
+            selectedSkin = 0;
+        }
+        sprite.sprite = skins[selectedSkin];
     }
 
    public void BackOption()
     {
-        characters[selectedCharacter].SetActive(false );
-        selectedCharacter--;
-        if(selectedCharacter < 0)
+        selectedSkin = selectedSkin - 1;
+        if (selectedSkin <0)
         {
-            selectedCharacter += characters.Length;
-
+            selectedSkin = skins.Count - 1;
         }
-        characters[selectedCharacter].SetActive(true);  
+        sprite.sprite = skins[selectedSkin];
     }
 
  public void startGame()
     {
-       PlayerPrefs.SetInt("selectedCharacter",selectedCharacter);
+        PrefabUtility.SaveAsPrefabAsset(playerskin, "Assets/Assets/selectedSkin.prefab");
         PlayerPrefs.SetInt("Score", 0);
         SceneManager.LoadScene("main");
     }
