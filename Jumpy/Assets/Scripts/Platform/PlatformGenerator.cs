@@ -9,10 +9,10 @@ public class PlatformGenerator : MonoBehaviour
     public GameObject BoosterPlatform;
     public GameObject DyingPlatform;
     public GameObject Platform_Brown;
-
+    public GameObject Enemy;
     public GameObject Spring;
     public GameObject Trampoline;
-    //public GameObject Propeller;
+
 
     private GameObject Platform;
     private GameObject Random_Object;
@@ -23,11 +23,10 @@ public class PlatformGenerator : MonoBehaviour
 
     void Start()
     {
-        // Initialize boundary
+
         Top_Left = Camera.main.ScreenToWorldPoint(new Vector3(0, 0,0));
         Offset = 1.2f;
 
-        // Initialize platforms
         GeneratePlatform(1);
     }
     public void GeneratePlatform(int Num)
@@ -50,7 +49,6 @@ public class PlatformGenerator : MonoBehaviour
                 Instantiate(Platform_Brown, BrownPlatform_Pos, Quaternion.identity);
             }
 
-            // Create other platform
             Current_Y += Dist_Y;
             Vector3 Platform_Pos = new Vector3(Dist_X, Current_Y, 0);
             int Rand_Platform = Random.Range(1, 10);
@@ -67,7 +65,7 @@ public class PlatformGenerator : MonoBehaviour
                 
                 int Rand_Object = Random.Range(1, 40);
 
-                if (Rand_Object == 4) // Create spring
+                if (Rand_Object == 4) 
                 {
                     Vector3 Spring_Pos = new Vector3(Platform_Pos.x, Platform_Pos.y, 0);
                     Random_Object = Instantiate(Spring, Spring_Pos, Quaternion.identity);
@@ -83,14 +81,14 @@ public class PlatformGenerator : MonoBehaviour
                     
                     Random_Object.transform.parent = Platform.transform;
                 }
-                /*else if (Rand_Object == 15) // Create propeller
+                else if (Rand_Object == 15)
                 {
                     Vector3 Propeller_Pos = new Vector3(Platform_Pos.x + 0.13f, Platform_Pos.y + 0.15f, 0);
-                    Random_Object = Instantiate(Propeller, Propeller_Pos, Quaternion.identity);
+                    Random_Object = Instantiate(Enemy, Propeller_Pos, Quaternion.identity);
 
                     
                     Random_Object.transform.parent = Platform.transform;
-                }*/
+                }
             }
         }
     }

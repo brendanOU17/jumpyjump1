@@ -4,18 +4,37 @@ using UnityEngine;
 
 public class DyingPlatform : MonoBehaviour
 {
-
+    public GameObject dyingPlatform1;
+    public GameObject dyingPlatform2;
+    public float JumpForce = 10f;
     public void Deactive()
     {
         GetComponent<EdgeCollider2D>().enabled = false;
         GetComponent<PlatformEffector2D>().enabled = false;
     }
 
-    private void OnTriggerEnter2D(Collider2D collide)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collide.gameObject.CompareTag("Player"))
+
+        if (collision.relativeVelocity.y <= 0f)
         {
-            Deactive();
+            Rigidbody2D rb = collision.gameObject.GetComponent<Rigidbody2D>();
+            if (rb != null)
+            {
+                Deactive();
+                dyingPlatform1.SetActive(false);
+                dyingPlatform2.SetActive(true);
+                Vector2 velocity = rb.velocity;
+                velocity.y = JumpForce;
+                rb.velocity = velocity;
+                StartCoroutine(DestoryPlatform());
+            }
+        }
+
+        IEnumerator DestoryPlatform()
+        {
+            yield return new WaitForSeconds(1f);
+            Destroy(gameObject);
         }
     }
 }

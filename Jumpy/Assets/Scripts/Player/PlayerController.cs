@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    public GameObject rocket;
     public float movementSpeed = 10f;
     public Rigidbody2D rb;
     public float xMovement;
@@ -23,34 +22,36 @@ public class PlayerController : MonoBehaviour
    
     void Update()
     {
-       xMovement = Input.GetAxis("Horizontal") * movementSpeed;
-        if (xMovement < 0)
-        {
-            this.GetComponent<SpriteRenderer>().flipX = true;
-        }
-        else 
-        {
-            this.GetComponent<SpriteRenderer>().flipX = false;
-        }
-
-      if(rb.velocity.y >0 && transform.position.y > score)
-        {
-            score = transform.position.y;
-            writeScore = Mathf.FloorToInt(score);
-
-            PlayerPrefs.SetInt("Score",PlayerPrefs.GetInt("Score")+ writeScore);
-        }
-
-      
-        if (PlayerPrefs.GetInt("Score") > PlayerPrefs.GetInt("HighScore"))
-        {
-            PlayerPrefs.SetInt("Highscore", PlayerPrefs.GetInt("Score"));
-        }
-           
-        
+        PlayerMovement();
 
     }
 
+    public void PlayerMovement()
+    {
+     xMovement = Input.GetAxis("Horizontal") * movementSpeed;
+            if (xMovement < 0)
+            {
+                this.GetComponent<SpriteRenderer>().flipX = true;
+            }
+            else 
+            {
+                this.GetComponent<SpriteRenderer>().flipX = false;
+            }
+
+          if(rb.velocity.y >0 && transform.position.y > score)
+            {
+                score = transform.position.y;
+                writeScore = Mathf.FloorToInt(score);
+
+                PlayerPrefs.SetInt("Score",PlayerPrefs.GetInt("Score")+ writeScore);
+            }
+
+      
+            if (PlayerPrefs.GetInt("Score") > PlayerPrefs.GetInt("HighScore"))
+            {
+                PlayerPrefs.SetInt("Highscore", PlayerPrefs.GetInt("Score"));
+            }
+    }
     private void FixedUpdate()
     {
         Vector2 velocity = rb.velocity;
@@ -77,13 +78,5 @@ public class PlayerController : MonoBehaviour
        
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.gameObject.tag==("Rocket"))
-        {
-            rocket.SetActive(true);
-            Debug.Log("spwan rocket");
-        }
-        
-    }
+  
 }
