@@ -1451,6 +1451,10 @@ MonoBehaviour:
   - {fileID: 114028296, guid: a02e7011eab3b934aa614c615e5b8921, type: 3}
   - {fileID: 387610367, guid: a02e7011eab3b934aa614c615e5b8921, type: 3}
   - {fileID: 685016730, guid: a02e7011eab3b934aa614c615e5b8921, type: 3}
+  - {fileID: 21300000, guid: 3845447bd43a3e7459b2788524f59f15, type: 3}
+  - {fileID: 21300000, guid: 9ce8b44262cb4a24f97889f014e57c9b, type: 3}
+  - {fileID: 21300000, guid: b7fb0a8f42410664d945997b120aca1e, type: 3}
+  - {fileID: 21300000, guid: b9500029c82a7354ca890527b23f71b1, type: 3}
   playerskin: {fileID: 1911478769456277749}
 --- !u!4 &1931579450
 Transform:
