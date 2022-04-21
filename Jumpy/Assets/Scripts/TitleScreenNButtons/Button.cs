@@ -13,7 +13,7 @@ public class Button : MonoBehaviour
 
     void Start()
     {
-        if (PlayerPrefs.HasKey("selectedOption"))
+        if (!PlayerPrefs.HasKey("selectedOption"))
         {
             selectedOption = 0;
         }
@@ -57,7 +57,7 @@ public class Button : MonoBehaviour
     private void Save()
     {
         PlayerPrefs.SetInt("selectedOption", selectedOption);
-        PlayerPrefs.Save();
+        
     }
 
 
